@@ -18,7 +18,7 @@ app.get('/users', async (_response, reply) => {
   }
 
   return reply.status(201).send({
-    message: "Users not found !",
+    message: "Users found !",
     status_req: true,
     users
   })
@@ -41,7 +41,10 @@ app.post('/users', async (request, reply) => {
     }
   })
 
-  return reply.status(201).send();
+  return reply.status(201).send({
+    message: "User created",
+    status_req: true,
+  });
 });
 
 app.delete('/users/:id', async () => {})
